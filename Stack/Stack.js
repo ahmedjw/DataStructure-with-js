@@ -28,5 +28,24 @@ class Stack {
       this.length--;
     }
   }
+  peek() {
+    if (!this.length) {
+      return null;
+    } else {
+      return this.last.value;
+    }
+  }
+  isEmpty() {
+    if (!this.length) {
+      return true;
+    } else return false;
+  }
+  size() {
+    return this.length;
+  }
+  clear() {
+    this.last = null;
+    this.length = 0;
+  }
 }
 let stack = new Stack();
