@@ -25,15 +25,19 @@ class Queue {
     this.length += 1;
   }
   dequeue() {
+    let popedNodeVlaue = null;
     if (!this.length) {
       return null;
     } else if (this.length === 1) {
+      popedNodeVlaue = this.start.value;
       this.start = null;
       this.end = null;
     } else {
+      popedNodeVlaue = this.start.value;
       this.start = this.start.next;
     }
     this.length -= 1;
+    return popedNodeVlaue;
   }
   size() {
     return this.length;
