@@ -10,7 +10,7 @@ class Queue {
     this.start = null;
     this.end = null;
   }
-  push(value) {
+  enqueue(value) {
     let newNode = new node(value);
     if (!this.length) {
       this.start = newNode;
@@ -24,7 +24,7 @@ class Queue {
     }
     this.length += 1;
   }
-  pop() {
+  dequeue() {
     if (!this.length) {
       return null;
     } else if (this.length === 1) {
@@ -34,6 +34,23 @@ class Queue {
       this.start = this.start.next;
     }
     this.length -= 1;
+  }
+  size() {
+    return this.length;
+  }
+  isEmpty() {
+    // return this.length === 0 ?true:false;
+    if (this.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  front() {
+    return this.start.value;
+  }
+  back() {
+    return this.end.value;
   }
 }
 let queue = new Queue();
