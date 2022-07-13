@@ -21,7 +21,7 @@ class hashTable {
   }
   remove(key) {
     let Index = this.hash(key);
-    if (this.table.[Index] && this.table[Index].length >0) {
+    if (this.table[Index] && this.table[Index].length > 0) {
       this.table[Index] = undefined;
       this.size--;
     } else return null;
