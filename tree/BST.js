@@ -38,12 +38,21 @@ class Tree {
       let current = this.root;
       while (current) {
         if (val === current.value) return current;
-        if (val < current.value) {
-          current = current.left;
-        } else {
-          current = current.right;
-        }
+        if (val < current.value) current = current.left;
+        else current = current.right;
       }
+    }
+  }
+  contains(val) {
+    if (this.root === null) return false;
+    else {
+      let current = this.root;
+      while (current) {
+        if ((current.value = val)) return true;
+        if (val < current.value) current = current.left;
+        else current = current.right;
+      }
+      return false;
     }
   }
 }
@@ -55,3 +64,4 @@ tree.Insert(4);
 tree.Insert(9);
 console.log(tree.find(5));
 tree.find(4);
+tree.contain(4);
