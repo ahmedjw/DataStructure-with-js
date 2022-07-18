@@ -31,6 +31,21 @@ class Tree {
       }
     }
   }
+  find(val) {
+    if (this.root === null) {
+      return null;
+    } else {
+      let current = this.root;
+      while (current) {
+        if (val === current.value) return current;
+        if (val < current.value) {
+          current = current.left;
+        } else {
+          current = current.right;
+        }
+      }
+    }
+  }
 }
 let tree = new Tree();
 tree.Insert(5);
@@ -38,4 +53,5 @@ tree.Insert(3);
 tree.Insert(8);
 tree.Insert(4);
 tree.Insert(9);
-console.log("cuurent tree ", tree);
+console.log(tree.find(5));
+tree.find(4);
