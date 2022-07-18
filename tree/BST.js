@@ -18,14 +18,10 @@ class Tree {
       while (true) {
         if (current.value === val) return undefined;
         if (val < current.value) {
-          if (current.left === null) {
-            current.left = new node(val);
-          }
+          if (current.left === null) current.left = new node(val);
           current = current.left;
         } else {
-          if (current.right === null) {
-            current.right = new node(val);
-          }
+          if (current.right === null) current.right = new node(val);
           current = current.right;
         }
       }
