@@ -7,3 +7,4 @@ function dtb(number) {
   } while (nextnum !== 0);
   return Number(NumbersStack.join(""));
 }
+// Example on Stack Usage
